@@ -1,3 +1,7 @@
+# comment to note that this is altered
+
+set.seed(0)
+
 file <- "TCGA_breast_cancer_LumA_vs_Basal_PAM50.tsv"
 first10 <- c('NAT1','BIRC5','BAG1','BCL2','BLVRA','CCNB1','CCNE1','CDC6','CDC20','CDH3')
 nfold <- 3
@@ -33,6 +37,6 @@ for (test_group in 1:nfold) {
     result[test_group] <- (misclassifiedA+misclassifiedB)/(ncol(testA)+ncol(testB))
 }
   
-mean(result)
-sd(result)
+print(mean(result))
+print(sd(result))
 
